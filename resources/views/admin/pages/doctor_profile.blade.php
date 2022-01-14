@@ -6,7 +6,7 @@
       <!-- Breadcrumbs-->
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="#">Dashboard</a>
+          <a href="#">Dashboard.</a>
         </li>
         <li class="breadcrumb-item active">Add listing</li>
       </ol>
@@ -17,7 +17,7 @@
 			<div class="row">
 				<div class="col-md-6">
 					<div class="form-group">
-						<label>Name</label>
+						<label>dr Name</label>
 						<input type="text" class="form-control" placeholder="Your name">
 					</div>
 				</div>
