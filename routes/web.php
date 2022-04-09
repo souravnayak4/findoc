@@ -25,6 +25,7 @@ Route::get('/list', [FrontendController::class, 'list']);
 Route::get('/detail-page', [FrontendController::class, 'detail_page']);
 Route::get('/booking', [FrontendController::class, 'booking']);
 Route::get('/confirm', [FrontendController::class, 'confirm']);
+
 Route::get('/dashboard', [AdminController::class, 'dashboard']);
 Route::get('/messages', [AdminController::class, 'messages']);
 Route::get('/book', [AdminController::class, 'book']);
