@@ -26,6 +26,8 @@
   <link href="{{asset('admin')}}/css/admin.css" rel="stylesheet">
   <!-- Your custom styles -->
   <link href="{{asset('admin')}}/css/admin.css" rel="stylesheet">
+
+  <link href="{{asset('admin')}}/vendor/dropzone.css" rel="stylesheet">
 	
 </head>
 
@@ -39,37 +41,43 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-          <a class="nav-link" href="index.html">
+          <a class="nav-link" href="{{URL::to('/dashboard')}}">
             <i class="fa fa-fw fa-dashboard"></i>
             <span class="nav-link-text">Dashboard</span>
           </a>
         </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+          <a class="nav-link" href="{{URL::to('/add-area')}}">
+            <i class="fa fa-fw fa-dashboard"></i>
+            <span class="nav-link-text">Add Area</span>
+          </a>
+        </li>
 		<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Messages">
-          <a class="nav-link" href="messages.html">
+          <a class="nav-link" href="{{URL::to('/messages')}}">
             <i class="fa fa-fw fa-envelope-open"></i>
             <span class="nav-link-text">Messages</span>
           </a>
         </li>
 		<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Book">
-          <a class="nav-link" href="book.html">
+          <a class="nav-link" href="{{URL::to('/book')}}">
             <i class="fa fa-fw fa-calendar-check-o"></i>
             <span class="nav-link-text">Book <span class="badge badge-pill badge-primary">6 New</span></span>
           </a>
         </li>
 		<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Reviews">
-          <a class="nav-link" href="reviews.html">
+          <a class="nav-link" href="{{URL::to('/reviews')}}">
             <i class="fa fa-fw fa-star"></i>
             <span class="nav-link-text">Reviews</span>
           </a>
         </li>
 		<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Bookmarks">
-          <a class="nav-link" href="bookmarks.html">
+          <a class="nav-link" href="{{URL::to('/bookmarks')}}">
             <i class="fa fa-fw fa-heart"></i>
             <span class="nav-link-text">Bookmarks</span>
           </a>
         </li>
 		<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Add listing">
-          <a class="nav-link" href="add-listing.html">
+          <a class="nav-link" href="{{URL::to('/add-listing')}}">
             <i class="fa fa-fw fa-plus-circle"></i>
             <span class="nav-link-text">Add listing</span>
           </a>
@@ -81,10 +89,10 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseProfile">
             <li>
-              <a href="user-profile.html">User profile</a>
+              <a href="{{URL::to('/user-profile')}}">User profile</a>
             </li>
 			<li>
-              <a href="doctor-profile.html">Doctor profile</a>
+              <a href="{{URL::to('/doctor-profile')}}">Doctor profile</a>
             </li>
           </ul>
         </li>
@@ -95,10 +103,10 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseComponents">
             <li>
-              <a href="charts.html">Charts</a>
+              <a href="{{URL::to('/charts')}}">Charts</a>
             </li>
 			<li>
-              <a href="tables.html">Tables</a>
+              <a href="{{URL::to('/tables')}}">Tables</a>
             </li>
           </ul>
         </li>
@@ -255,5 +263,9 @@
     <script src="{{asset('admin')}}/js/admin.js"></script>
 	<!-- Custom scripts for this page-->
     <script src="{{asset('admin')}}/js/admin-charts.js"></script>
+<!-- Custom scripts for this page-->
+<script src="{{asset('admin')}}/js/admin-datatables.js"></script>
+<script src="{{asset('admin')}}/vendor/dropzone.min.js"></script>
+
     </body>
 </html>
