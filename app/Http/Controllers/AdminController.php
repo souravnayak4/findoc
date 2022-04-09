@@ -37,7 +37,12 @@ class AdminController extends Controller
         ->with('bookmarks',$bookmarks);
 
     }
-   
+    public function add_listing(){
+        $book=view('admin.pages.add_listing');
+        return view('admin.master')
+        ->with('book',$book);
+
+    }
     public function user_profile(){
         $user_profile=view('admin.pages.user_profile');
         return view('admin.master')
@@ -60,6 +65,13 @@ class AdminController extends Controller
         $tables=view('admin.pages.tables');
         return view('admin.master')
         ->with('tables',$tables);
+
+    }
+
+    public function add_area(){
+        $area=view('admin.pages.add_area');
+        return view('admin.master')
+        ->with('area',$area);
 
     }
 

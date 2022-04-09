@@ -38,6 +38,9 @@ Route::get('/tables', [AdminController::class, 'tables']);
 Route::get('/charts', [AdminController::class, 'charts']);
 
 
+Route::get('/add-area', [AdminController::class, 'add_area']);
+
+
 
 
 
