@@ -28,6 +28,7 @@
   <link href="{{asset('admin')}}/css/admin.css" rel="stylesheet">
 
   <link href="{{asset('admin')}}/vendor/dropzone.css" rel="stylesheet">
+  <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
 	
 </head>
 
@@ -278,6 +279,9 @@
 <!-- Custom scripts for this page-->
 <script src="{{asset('admin')}}/js/admin-datatables.js"></script>
 <script src="{{asset('admin')}}/vendor/dropzone.min.js"></script>
+<script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+        {!! Toastr::message() !!}
 
     </body>
 </html>

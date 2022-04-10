@@ -18,9 +18,11 @@
 					<div class="header_box version_2">
 						<h2><i class="fa fa-location-pin"></i>Add Area</h2>
 					</div>
+					<form method="post" action="/save-area">
+						@csrf
 					<div class="form-group">
 						<label>Area Name</label>
-						<input class="form-control" type="text">
+						<input class="form-control" type="text" name="area_name">
 					</div>
 					
 				</div>
@@ -28,7 +30,8 @@
 			
 		</div>
 		<!-- /row-->
-		<p><a href="#0" class="btn_1 medium">Save</a></p>
+		<p><input type="submit" class="btn_1 medium" value="Save"></p>
+</form>
 	  </div>
 	  <!-- /.container-fluid-->
    	</div>

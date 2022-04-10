@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use DB;
+use Toastr;
+use Redirect;
 class AdminController extends Controller
 {
     public function dashboard(){
@@ -72,6 +74,19 @@ class AdminController extends Controller
         $area=view('admin.pages.add_area');
         return view('admin.master')
         ->with('area',$area);
+
+    }
+    public function save_area(Request $request){
+
+        //print($request->area_name);
+        DB::table('tbl_area')->insert([
+            'area_name' => $request->area_name
+            
+        ]);
+
+        Toastr::success('Area add Successfully', 'Info', ["positionClass" => "toast-top-center"]);
+        
+        return Redirect::back();
 
     }
     public function add_clinic(){
