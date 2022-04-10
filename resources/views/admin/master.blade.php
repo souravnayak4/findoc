@@ -52,6 +52,18 @@
             <span class="nav-link-text">Add Area</span>
           </a>
         </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+          <a class="nav-link" href="{{URL::to('/add-clinic')}}">
+            <i class="fa fa-fw fa-dashboard"></i>
+            <span class="nav-link-text">Add Clinic</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+          <a class="nav-link" href="{{URL::to('/add-specialist')}}">
+            <i class="fa fa-fw fa-dashboard"></i>
+            <span class="nav-link-text">Add Specialist</span>
+          </a>
+        </li>
 		<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Messages">
           <a class="nav-link" href="{{URL::to('/messages')}}">
             <i class="fa fa-fw fa-envelope-open"></i>

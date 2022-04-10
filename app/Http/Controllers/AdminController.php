@@ -74,5 +74,18 @@ class AdminController extends Controller
         ->with('area',$area);
 
     }
+    public function add_clinic(){
+        $clinic=view('admin.pages.add_clinic');
+        return view('admin.master')
+        ->with('clinic',$clinic);
+
+    }
+    public function add_specialist(){
+        $specialist=view('admin.pages.add_specialist');
+        return view('admin.master')
+        ->with('specialist',$specialist);
+
+    }
+
 
 }
