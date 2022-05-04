@@ -42,7 +42,11 @@ Route::get('/add-area', [AdminController::class, 'add_area']);
 Route::post('/save-area', [AdminController::class, 'save_area']);
 
 Route::get('/add-clinic', [AdminController::class, 'add_clinic']);
+
 Route::get('/add-specialist', [AdminController::class, 'add_specialist']);
+Route::post('/save-specialist', [AdminController::class, 'save_specialist']);
+
+
 
 
 

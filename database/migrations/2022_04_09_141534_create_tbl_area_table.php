@@ -8,6 +8,7 @@ class CreateTblAreaTable extends Migration
 {
     /**
      * Run the migrations.
+     * 
      *
      * @return void
      */

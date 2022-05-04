@@ -89,6 +89,8 @@ class AdminController extends Controller
         return Redirect::back();
 
     }
+    
+  
     public function add_clinic(){
         $clinic=view('admin.pages.add_clinic');
         return view('admin.master')
@@ -101,6 +103,19 @@ class AdminController extends Controller
         ->with('specialist',$specialist);
 
     }
+    public function save_specialist(Request $request){
 
+        //print($request->specialist_name);
+        //print($request->specialist_name);
+        DB::table('tbl_specialist')->insert([
+            'spl_name' => $request->specialist_name
+            
+        ]); 
+        Toastr::success('specialist add Successfully', 'Info', ["positionClass" => "toast-top-center"]);
+        
+        return Redirect::back();   
+       
+
+    }
 
 }
