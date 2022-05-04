@@ -40,6 +40,10 @@ Route::get('/charts', [AdminController::class, 'charts']);
 
 Route::get('/add-area', [AdminController::class, 'add_area']);
 Route::post('/save-area', [AdminController::class, 'save_area']);
+Route::get('/manage-area', [AdminController::class, 'manage_area']);
+Route::get('/edit-area/{id}', [AdminController::class, 'edit_area']);
+Route::post('/update-area', [AdminController::class, 'update_area']);
+Route::get('/delete-area/{id}', [AdminController::class, 'delete_area']);
 
 Route::get('/add-clinic', [AdminController::class, 'add_clinic']);
 

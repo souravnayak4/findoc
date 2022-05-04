@@ -90,6 +90,44 @@ class AdminController extends Controller
 
     }
     
+    public function manage_area(){
+        $all=DB::table('tbl_area')->get();
+        $area=view('admin.pages.manage_area')
+                ->with('all',$all);
+        return view('admin.master')
+        ->with('area',$area);
+
+    }
+
+    public function edit_area($id){
+        $find_area=DB::table('tbl_area')->where('area_id',$id)->first();
+        $area=view('admin.pages.edit_area')
+                ->with('find_area',$find_area);
+        return view('admin.master')
+        ->with('area',$area);
+
+    }
+
+    public function update_area(Request $request){
+
+        
+        DB::table('tbl_area')
+              ->where('area_id', $request->id)
+              ->update(['area_name' => $request->area_name]);
+
+        Toastr::success('Area Updated Successfully', 'Info', ["positionClass" => "toast-top-center"]);
+        
+        return Redirect::back();
+
+    }
+
+    public function delete_area($id){
+        DB::table('tbl_area')->where('area_id',$id)->delete();
+        Toastr::success('Area Deleted Successfully', 'Info', ["positionClass" => "toast-top-center"]);
+        
+        return Redirect::back();
+
+    }
   
     public function add_clinic(){
         $clinic=view('admin.pages.add_clinic');

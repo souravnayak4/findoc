@@ -54,6 +54,12 @@
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+          <a class="nav-link" href="{{URL::to('/manage-area')}}">
+            <i class="fa fa-fw fa-dashboard"></i>
+            <span class="nav-link-text">Manage Area</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
           <a class="nav-link" href="{{URL::to('/add-clinic')}}">
             <i class="fa fa-fw fa-dashboard"></i>
             <span class="nav-link-text">Add Clinic</span>
