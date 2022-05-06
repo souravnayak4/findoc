@@ -130,11 +130,27 @@ class AdminController extends Controller
     }
   
     public function add_clinic(){
-        $clinic=view('admin.pages.add_clinic');
+        $all_area=DB::table('tbl_area')->get();
+        $clinic=view('admin.pages.add_clinic')
+                ->with('all_area',$all_area);
         return view('admin.master')
         ->with('clinic',$clinic);
 
     }
+    public function save_clinic(Request $request){
+
+        
+        DB::table('tbl_clinic')->insert([
+            'clinic_name' => $request->clinic_name
+            
+        ]); 
+        Toastr::success('Clinic add Successfully', 'Info', ["positionClass" => "toast-top-center"]);
+        
+        return Redirect::back();   
+       
+
+    }
+
     public function add_specialist(){
         $specialist=view('admin.pages.add_specialist');
         return view('admin.master')

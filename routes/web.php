@@ -46,6 +46,7 @@ Route::post('/update-area', [AdminController::class, 'update_area']);
 Route::get('/delete-area/{id}', [AdminController::class, 'delete_area']);
 
 Route::get('/add-clinic', [AdminController::class, 'add_clinic']);
+Route::post('/save-clinic', [AdminController::class, 'save_clinic']);
 
 Route::get('/add-specialist', [AdminController::class, 'add_specialist']);
 Route::post('/save-specialist', [AdminController::class, 'save_specialist']);
