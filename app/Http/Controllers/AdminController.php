@@ -155,5 +155,36 @@ class AdminController extends Controller
        
 
     }
+    public function manage_specialist(){
+        $all=DB::table('tbl_specialist')->get();
+        $specialist=view('admin.pages.manage_specialist')
+                ->with('all',$all);
+        return view('admin.master')
+        ->with('specialist',$specialist);
+
+    }
+    public function edit_spl($id){
+        $find_spl=DB::table('tbl_specialist')->where('spl_id',$id)->first();
+        $spl=view('admin.pages.edit_spl')
+                ->with('find_spl',$find_spl);
+        return view('admin.master')
+        ->with('spl',$spl);
+
+    }
+
+    public function update_specialist(Request $request){
+
+        
+        DB::table('tbl_specialist')
+              ->where('spl_id', $request->id)
+              ->update(['spl_name' => $request->spl_name]);
+
+        Toastr::success('specialist Updated Successfully', 'Info', ["positionClass" => "toast-top-center"]);
+        
+        return Redirect::back();
+
+    }
+
+  
 
 }

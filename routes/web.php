@@ -49,8 +49,10 @@ Route::get('/add-clinic', [AdminController::class, 'add_clinic']);
 
 Route::get('/add-specialist', [AdminController::class, 'add_specialist']);
 Route::post('/save-specialist', [AdminController::class, 'save_specialist']);
-
-
+Route::get('/manage-specialist', [AdminController::class, 'manage_specialist']);
+Route::get('/edit-specialist/{id}', [AdminController::class, 'edit_spl']);
+Route::post('/update-specialist', [AdminController::class, 'update_specialist']);
+Route::get('/delete-specialist/{id}', [AdminController::class, 'delete_specialist']);
 
 
 
