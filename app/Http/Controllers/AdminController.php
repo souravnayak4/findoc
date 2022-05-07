@@ -69,7 +69,7 @@ class AdminController extends Controller
         ->with('tables',$tables);
 
     }
-
+          //           AREA
     public function add_area(){
         $area=view('admin.pages.add_area');
         return view('admin.master')
@@ -128,28 +128,12 @@ class AdminController extends Controller
         return Redirect::back();
 
     }
-  
-    public function add_clinic(){
-        $all_area=DB::table('tbl_area')->get();
-        $clinic=view('admin.pages.add_clinic')
-                ->with('all_area',$all_area);
-        return view('admin.master')
-        ->with('clinic',$clinic);
+          
 
-    }
-    public function save_clinic(Request $request){
 
-        
-        DB::table('tbl_clinic')->insert([
-            'clinic_name' => $request->clinic_name
-            
-        ]); 
-        Toastr::success('Clinic add Successfully', 'Info', ["positionClass" => "toast-top-center"]);
-        
-        return Redirect::back();   
-       
-
-    }
+   
+   
+       //SPECIALIST
 
     public function add_specialist(){
         $specialist=view('admin.pages.add_specialist');
@@ -201,6 +185,76 @@ class AdminController extends Controller
 
     }
 
+    public function delete_specialist($id){
+        DB::table('tbl_specialist')->where('spl_id',$id)->delete();
+        Toastr::success('Specialist Deleted Successfully', 'Info', ["positionClass" => "toast-top-center"]);
+        
+        return Redirect::back();
+
+    }
+  
+
+
+
+    public function add_clinic(){
+        $all_area=DB::table('tbl_area')->get();
+        $clinic=view('admin.pages.add_clinic')
+                ->with('all_area',$all_area);
+        return view('admin.master')
+        ->with('clinic',$clinic);
+
+    }
+
+    public function save_clinic(Request $request){
+
+        //print($request->clinic_name);
+        DB::table('tbl_clinic')->insert([
+            'clinic_name' => $request->clinic_name
+            
+        ]);
+
+        Toastr::success('Clinic add Successfully', 'Info', ["positionClass" => "toast-top-center"]);
+        
+        return Redirect::back();
+
+    }
+
+    public function manage_clinic(){
+        $all=DB::table('tbl_clinic')->get();
+        $clinic=view('admin.pages.manage_clinic')
+                ->with('all',$all);
+        return view('admin.master')
+        ->with('clinic',$clinic);
+
+    }
+    public function edit_clinic($id){
+        $find_clinic=DB::table('tbl_clinic')->where('clinic_id',$id)->first();
+        $clinic=view('admin.pages.edit_clinic')
+                ->with('find_clinic',$find_clinic);
+        return view('admin.master')
+        ->with('clinic',$clinic);
+
+    }
+    public function update_clinic(Request $request){
+
+        
+        DB::table('tbl_clinic')
+              ->where('clinic_id', $request->id)
+              ->update(['clinic_name' => $request->clinic_name]);
+
+        Toastr::success('Clinic Updated Successfully', 'Info', ["positionClass" => "toast-top-center"]);
+        
+        return Redirect::back();
+
+    }
+   
+    public function delete_clinic($id){
+        DB::table('tbl_clinic')->where('clinic_id',$id)->delete();
+        Toastr::success('clinic Deleted Successfully', 'Info', ["positionClass" => "toast-top-center"]);
+        
+        return Redirect::back();
+
+    }
   
 
 }
