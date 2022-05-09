@@ -24,15 +24,14 @@
                     <label>Clinic</label>
                     <select class="form-control">
                         <option value="">Select city</option>
-                        <option value="New York">New York</option>
-                        <option value="Chicago">Chicago</option>
-                        <option value="Miami">Miami</option>
-                        <option value="Los Angeles">Los Angeles</option>
+                        @foreach($all_area as $v_area)
+                        <option value="{{$v_area->area_id}}">{{$v_area->area_name}}</option>
+                        @endforeach
                     </select>
                 </div>
                     <div class="form-group">
                         <label>Clinic Name</label>
-                        <input class="form-control" type="text">
+                        <input class="form-control" type="text" name="clinic_name">
                     </div>
 
                 </div>
@@ -42,7 +41,8 @@
 
         </div>
         <!-- /row-->
-        <p><a href="#0" class="btn_1 medium">Save</a></p>
+        <p><input type="submit" class="btn_1 medium" value="Save"></p>
+</form>
     </div>
     <!-- /.container-fluid-->
 </div>

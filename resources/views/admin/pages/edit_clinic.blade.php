@@ -8,7 +8,7 @@
         <li class="breadcrumb-item">
           <a href="#">Dashboard</a>
         </li>
-        <li class="breadcrumb-item active">Add clinic</li>
+        <li class="breadcrumb-item active">Add listing</li>
       </ol>
 		
 		<!-- /box_general-->
