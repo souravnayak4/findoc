@@ -135,6 +135,47 @@ class AdminController extends Controller
         ->with('clinic',$clinic);
 
     }
+    public function save_clinic(Request $request){
+
+        DB::table('tbl_clinic')->insert([
+            'clinic_name' => $request->clinic_name
+            
+        ]); 
+        Toastr::success('clinic add Successfully', 'Info', ["positionClass" => "toast-top-center"]);
+        
+        return Redirect::back();   
+       
+
+    }
+    public function manage_clinic(){
+        $all=DB::table('tbl_clinic')->get();
+        $clinic=view('admin.pages.manage_clinic')
+                ->with('all',$all);
+        return view('admin.master')
+        ->with('clinic',$clinic);
+
+    }
+    public function edit_clinic($id){
+        $find_clinic=DB::table('tbl_clinic')->where('clinic_id',$id)->first();
+        $clinic=view('admin.pages.edit_clinic')
+                ->with('find_clinic',$find_clinic);
+        return view('admin.master')
+        ->with('clinic',$clinic);
+
+    }
+
+    public function update_clinic(Request $request){
+
+        
+        DB::table('tbl_clinic')
+              ->where('clinic_id', $request->id)
+              ->update(['clinic_name' => $request->clinic_name]);
+
+        Toastr::success('clinic Updated Successfully', 'Info', ["positionClass" => "toast-top-center"]);
+        
+        return Redirect::back();
+
+    }
     public function add_specialist(){
         $specialist=view('admin.pages.add_specialist');
         return view('admin.master')
@@ -143,8 +184,6 @@ class AdminController extends Controller
     }
     public function save_specialist(Request $request){
 
-        //print($request->specialist_name);
-        //print($request->specialist_name);
         DB::table('tbl_specialist')->insert([
             'spl_name' => $request->specialist_name
             

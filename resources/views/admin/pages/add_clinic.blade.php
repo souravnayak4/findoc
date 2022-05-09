@@ -18,8 +18,10 @@
                     <div class="header_box version_2">
                         <h2><i class="fa fa-location-pin"></i>Add Clinic</h2>
                     </div>
+                    <form method="post" action="/save-clinic">
+						@csrf
 					<div class="form-group">
-                    <label>Area</label>
+                    <label>Clinic</label>
                     <select class="form-control">
                         <option value="">Select city</option>
                         <option value="New York">New York</option>
