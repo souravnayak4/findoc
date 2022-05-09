@@ -22,7 +22,7 @@
 						@csrf
 					<div class="form-group">
                     <label>Area</label>
-                    <select class="form-control">
+                    <select class="form-control" name="area_id">
                         <option value="">Select city</option>
                         @foreach($all_area as $v_area)
                         <option value="{{$v_area->area_id}}">{{$v_area->area_name}}</option>
