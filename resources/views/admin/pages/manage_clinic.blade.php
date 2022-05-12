@@ -31,7 +31,8 @@
               <thead>
                 <tr>
                   <th>ID</th>
-                  <th>clinic</th>
+                  <th>Clinic</th>
+                  <th>City</th>
                   
                   <th>Edit</th>
                   <th>Delete</th>
@@ -52,6 +53,7 @@
                 <tr>
                   <td>{{$v_all->clinic_id}}</td>
                   <td>{{$v_all->clinic_name}}</td>
+                  <td>{{$v_all->area_name}}</td>
                   
                   <td><a href="{{URL::to('edit-clinic/'.$v_all->clinic_id)}}">Edit</a></td>
                   <td><a href="{{URL::to('delete-clinic/'.$v_all->clinic_id)}}"

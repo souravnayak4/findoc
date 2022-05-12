@@ -207,7 +207,8 @@ class AdminController extends Controller
 
         //print($request->clinic_name);
         DB::table('tbl_clinic')->insert([
-            'clinic_name' => $request->clinic_name
+            'clinic_name' => $request->clinic_name,
+            'area_id' => $request->area_id
             
         ]);
 
@@ -218,7 +219,12 @@ class AdminController extends Controller
     }
 
     public function manage_clinic(){
-        $all=DB::table('tbl_clinic')->get();
+        $all = DB::table('tbl_clinic')
+            ->join('tbl_area', 'tbl_clinic.area_id', '=', 'tbl_area.area_id')
+            
+            ->select('tbl_clinic.*', 'tbl_area.area_name')
+            ->get();
+        
         $clinic=view('admin.pages.manage_clinic')
                 ->with('all',$all);
         return view('admin.master')
@@ -255,12 +261,34 @@ class AdminController extends Controller
     }
     public function manage_dr(){
         $all=DB::table('tbl_dr_profile')->get();
+
         $dr=view('admin.pages.manage_dr')
                 ->with('all',$all);
+                
+        return view('admin.master')
+        ->with('dr',$dr);
+    }
+    
+    public function add_dr(){
+        $dr=view('admin.pages.add_dr');
         return view('admin.master')
         ->with('dr',$dr);
 
     }
   
+    public function save_dr(Request $request){
+
+        //print($request->area_name);
+        DB::table('tbl_dr_profile')->insert([
+            'dr_name' => $request->dr_name
+            
+        ]);
+
+        Toastr::success('Area add Successfully', 'Info', ["positionClass" => "toast-top-center"]);
+        
+        return Redirect::back();
+
+    }
+   
 
 }

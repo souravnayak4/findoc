@@ -88,6 +88,13 @@
           <a class="nav-link" href="{{URL::to('/manage-dr')}}">
             <i class="fa fa-fw fa-dashboard"></i>
             <span class="nav-link-text">Manage dr</span>
+</a>
+</li>
+<li>
+
+          <a class="nav-link" href="{{URL::to('/add-dr')}}">
+            <i class="fa fa-fw fa-dashboard"></i>
+            <span class="nav-link-text">Add Doctor</span>
           </a>
         </li>
 		<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Messages">

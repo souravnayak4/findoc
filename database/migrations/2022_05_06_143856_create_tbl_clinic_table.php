@@ -16,6 +16,7 @@ class CreateTblClinicTable extends Migration
         Schema::create('tbl_clinic', function (Blueprint $table) {
             $table->id('clinic_id');
             $table->string('clinic_name');
+            $table->integer('area_id');
             $table->timestamps();
         });
     }
