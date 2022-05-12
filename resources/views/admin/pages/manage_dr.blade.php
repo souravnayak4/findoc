@@ -30,10 +30,10 @@
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
               <thead>
                 <tr>
-                  <th>ID</th>
-                  <th>Clinic</th>
-                  <th>City</th>
-                  
+                  <th>DR ID</th>
+                  <th>dr name</th>
+                  <th> qualification</th>
+                  <th>specialist</th>
                   <th>Edit</th>
                   <th>Delete</th>
                   
@@ -51,12 +51,12 @@
               <tbody>
                   @foreach($all as $v_all)
                 <tr>
-                  <td>{{$v_all->clinic_id}}</td>
-                  <td>{{$v_all->clinic_name}}</td>
-                  <td>{{$v_all->area_name}}</td>
-                  
-                  <td><a href="{{URL::to('edit-clinic/'.$v_all->clinic_id)}}">Edit</a></td>
-                  <td><a href="{{URL::to('delete-clinic/'.$v_all->clinic_id)}}"
+                  <td>{{$v_all->dr_id}}</td>
+                  <td>{{$v_all->dr_name}}</td>
+                  <td>{{$v_all->spl_id}}</td>
+                  <td>{{$v_all->dr_specialist}}</td>
+                  <td><a href="{{URL::to('edit-dr/'.$v_all->dr_id)}}">Edit</a></td>
+                  <td><a href="{{URL::to('delete-dr/'.$v_all->dr_id)}}"
                                                     data-toggle="tooltip" data-original-title="Close"
                                                     onclick="return check_delete();">Delete</td>
                  

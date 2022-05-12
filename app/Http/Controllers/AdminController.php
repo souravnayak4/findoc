@@ -143,8 +143,6 @@ class AdminController extends Controller
     }
     public function save_specialist(Request $request){
 
-        //print($request->specialist_name);
-        //print($request->specialist_name);
         DB::table('tbl_specialist')->insert([
             'spl_name' => $request->specialist_name
             
@@ -261,6 +259,36 @@ class AdminController extends Controller
         return Redirect::back();
 
     }
+    public function manage_dr(){
+        $all=DB::table('tbl_dr_profile')->get();
+
+        $dr=view('admin.pages.manage_dr')
+                ->with('all',$all);
+                
+        return view('admin.master')
+        ->with('dr',$dr);
+    }
+    
+    public function add_dr(){
+        $dr=view('admin.pages.add_dr');
+        return view('admin.master')
+        ->with('dr',$dr);
+
+    }
   
+    public function save_dr(Request $request){
+
+        //print($request->area_name);
+        DB::table('tbl_dr_profile')->insert([
+            'dr_name' => $request->dr_name
+            
+        ]);
+
+        Toastr::success('Area add Successfully', 'Info', ["positionClass" => "toast-top-center"]);
+        
+        return Redirect::back();
+
+    }
+   
 
 }
