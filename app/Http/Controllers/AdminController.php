@@ -261,6 +261,26 @@ class AdminController extends Controller
         return Redirect::back();
 
     }
-  
+    
+    public function add_dr(){
+        $dr=view('admin.pages.add_dr');
+        return view('admin.master')
+        ->with('dr',$dr);
+
+    }
+    public function save_dr(Request $request){
+
+        //print($request->area_name);
+        DB::table('tbl_dr_profile')->insert([
+            'dr_name' => $request->dr_name
+            
+        ]);
+
+        Toastr::success('Area add Successfully', 'Info', ["positionClass" => "toast-top-center"]);
+        
+        return Redirect::back();
+
+    }
+   
 
 }

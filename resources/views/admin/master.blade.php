@@ -84,6 +84,12 @@
             <span class="nav-link-text">Manage specialist</span>
           </a>
         </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+          <a class="nav-link" href="{{URL::to('/add-dr')}}">
+            <i class="fa fa-fw fa-dashboard"></i>
+            <span class="nav-link-text">Add Doctor</span>
+          </a>
+        </li>
 		<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Messages">
           <a class="nav-link" href="{{URL::to('/messages')}}">
             <i class="fa fa-fw fa-envelope-open"></i>
