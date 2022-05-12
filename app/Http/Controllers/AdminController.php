@@ -226,7 +226,7 @@ class AdminController extends Controller
             
             ->select('tbl_clinic.*', 'tbl_area.area_name')
             ->get();
-        
+           
         $clinic=view('admin.pages.manage_clinic')
                 ->with('all',$all);
         return view('admin.master')
