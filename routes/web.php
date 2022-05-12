@@ -60,4 +60,5 @@ Route::get('/manage-clinic', [AdminController::class, 'manage_clinic']);
 Route::get('/edit-clinic/{id}', [AdminController::class, 'edit_clinic']);
 Route::post('/update-clinic', [AdminController::class, 'update_clinic']);
 Route::get('/delete-clinic/{id}', [AdminController::class, 'delete_clinic']);
+Route::get('/manage-dr', [AdminController::class, 'manage_dr']);
 

@@ -253,6 +253,14 @@ class AdminController extends Controller
         return Redirect::back();
 
     }
+    public function manage_dr(){
+        $all=DB::table('tbl_dr_profile')->get();
+        $dr=view('admin.pages.manage_dr')
+                ->with('all',$all);
+        return view('admin.master')
+        ->with('dr',$dr);
+
+    }
   
 
 }
