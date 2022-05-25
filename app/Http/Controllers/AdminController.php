@@ -270,7 +270,9 @@ class AdminController extends Controller
     }
     
     public function add_dr(){
-        $dr=view('admin.pages.add_dr');
+        $all=DB::table('tbl_specialist')->get();
+        $dr=view('admin.pages.add_dr')
+                ->with('all_spl',$all);
         return view('admin.master')
         ->with('dr',$dr);
 
@@ -278,13 +280,24 @@ class AdminController extends Controller
   
     public function save_dr(Request $request){
 
-        //print($request->area_name);
-        DB::table('tbl_dr_profile')->insert([
-            'dr_name' => $request->dr_name
+        $validated = $request->validate([
+            'dr_name' => 'required',
+            'spl_id' => 'required',
+            'dr_qualification' => 'required',
+            'dr_exp' => 'required',
             
         ]);
 
-        Toastr::success('Area add Successfully', 'Info', ["positionClass" => "toast-top-center"]);
+        //print($request->area_name);
+        DB::table('tbl_dr_profile')->insert([
+            'dr_name' => $request->dr_name,
+            'spl_id' => $request->spl_id,
+            'dr_qualification' => $request->dr_qualification,
+            'dr_exp' => $request->dr_exp
+            
+        ]);
+
+        Toastr::success('Doctor add Successfully', 'Info', ["positionClass" => "toast-top-center"]);
         
         return Redirect::back();
 
