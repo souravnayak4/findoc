@@ -34,16 +34,23 @@
                         <option value="">Select Specialist</option>
                         @foreach($all_spl as $v_spl)
                         <option value="{{$v_spl->spl_id}}">{{$v_spl->spl_name}}</option>
+						
                         @endforeach
                     </select>
                 </div>
 					<div class="form-group">
 						<label>Qualification</label>
-						<input class="form-control" type="text" name="dr_qualification" >
+						<input class="form-control @error('dr_qualification') is-invalid @enderror" type="text" name="dr_qualification" value="{{ old('dr_qualification') }}">
+						@error('dr_qualification')
+    <div class="alert alert-danger">{{ $message }}</div>
+@enderror
 					</div>
 					<div class="form-group">
 						<label>Experience</label>
-						<input class="form-control" type="number" name="dr_exp" >
+										<input class="form-control @error('dr_qualification') is-invalid @enderror" type="text" name="dr_qualification" value="{{ old('dr_qualification') }}">
+						@error('dr_qualification')
+    <div class="alert alert-danger">{{ $message }}</div>
+@enderror
 					</div>
 					
 				</div>
