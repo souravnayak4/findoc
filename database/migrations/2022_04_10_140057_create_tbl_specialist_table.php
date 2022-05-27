@@ -16,6 +16,7 @@ class CreateTblSpecialistTable extends Migration
         Schema::create('tbl_specialist', function (Blueprint $table) {
             $table->id('spl_id');
             $table->string('spl_name');
+            $table->string('spl_image');
             $table->timestamps();
         });
     }

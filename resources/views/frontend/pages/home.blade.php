@@ -131,184 +131,22 @@
 				<p>Nec graeci sadipscing disputationi ne, mea ea nonumes percipitur. Nonumy ponderum oporteat cu mel, pro movet cetero at.</p>
 			</div>
 			<div class="row">
+				@foreach($all_spl as $v_spl)
 				<div class="col-lg-3 col-md-6">
 					<a href="/list" class="box_cat_home">
 						<i class="icon-info-4"></i>
-						<img src="{{asset('frontend')}}/img/icon_cat_1.svg" width="60" height="60" alt="">
-						<h3>General Physician</h3>
+						<img src="{{asset($v_spl->spl_image)}}" width="60" height="60" alt="">
+						<h3>{{$v_spl->spl_name}}</h3>
 						<ul class="clearfix">
 							<li><strong>124</strong>Doctors</li>
 							<!-- <li><strong>60</strong>Clinics</li> -->
 						</ul>
 					</a>
 				</div>
-				<div class="col-lg-3 col-md-6">
-					<a href="/list" class="box_cat_home">
-						<i class="icon-info-4"></i>
-						<img src="{{asset('frontend')}}/img/icon_cat_2.svg" width="60" height="60" alt="">
-						<h3>Orthopedist</h3>
-						<ul class="clearfix">
-							<li><strong>124</strong>Doctors</li>
-							<!-- <li><strong>60</strong>Clinics</li> -->
-						</ul>
-					</a>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<a href="/list" class="box_cat_home">
-						<i class="icon-info-4"></i>
-						<img src="{{asset('frontend')}}/img/icon_cat_3.svg" width="60" height="60" alt="">
-						<h3>Child Specialists</h3>
-						<ul class="clearfix">
-							<li><strong>124</strong>Doctors</li>
-							<!-- <li><strong>60</strong>Clinics</li> -->
-						</ul>
-					</a>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<a href="/list" class="box_cat_home">
-						<i class="icon-info-4"></i>
-						<img src="{{asset('frontend')}}/img/icon_cat_4.svg" width="60" height="60" alt="">
-						<h3>Dentistry</h3>
-						<ul class="clearfix">
-							<li><strong>124</strong>Doctors</li>
-							<!-- <li><strong>60</strong>Clinics</li> -->
-						</ul>
-					</a>
-				</div>
-				<div class="row">
-					<div class="col-lg-3 col-md-6">
-						<a href="/list" class="box_cat_home">
-							<i class="icon-info-4"></i>
-							<img src="{{asset('frontend')}}/img/icon_cat_1.svg" width="60" height="60" alt="">
-							<h3>Gynaecology</h3>
-							<ul class="clearfix">
-								<li><strong>124</strong>Doctors</li>
-								<!-- <li><strong>60</strong>Clinics</li> -->
-							</ul>
-						</a>
-					</div>
-					<div class="col-lg-3 col-md-6">
-						<a href="/list" class="box_cat_home">
-							<i class="icon-info-4"></i>
-							<img src="{{asset('frontend')}}/img/icon_cat_2.svg" width="60" height="60" alt="">
-							<h3>Cardiology</h3>
-							<ul class="clearfix">
-								<li><strong>124</strong>Doctors</li>
-								<li><strong>60</strong>Clinics</li>
-							</ul>
-						</a>
-					</div>
-					<div class="col-lg-3 col-md-6">
-						<a href="/list" class="box_cat_home">
-							<i class="icon-info-4"></i>
-							<img src="{{asset('frontend')}}/img/icon_cat_3.svg" width="60" height="60" alt="">
-							<h3>Pediatrics</h3>
-							<ul class="clearfix">
-								<li><strong>124</strong>Doctors</li>
-								<li><strong>60</strong>Clinics</li>
-							</ul>
-						</a>
-					</div>
-					<div class="col-lg-3 col-md-6">
-						<a href="/list" class="box_cat_home">
-							<i class="icon-info-4"></i>
-							<img src="{{asset('frontend')}}/img/icon_cat_4.svg" width="60" height="60" alt="">
-							<h3>eye and vision</h3>
-							<ul class="clearfix">
-								<li><strong>124</strong>Doctors</li>
-								<li><strong>60</strong>Clinics</li>
-							</ul>
-						</a>
-					</div>	
-			<div class="row">
-				<div class="col-lg-3 col-md-6">
-					<a href="/list" class="box_cat_home">
-						<i class="icon-info-4"></i>
-						<img src="{{asset('frontend')}}/img/icon_cat_1.svg" width="60" height="60" alt="">
-						<h3>Physiotherapy</h3>
-						<ul class="clearfix">
-							<li><strong>124</strong>Doctors</li>
-							<li><strong>60</strong>Clinics</li>
-						</ul>
-					</a>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<a href="/list" class="box_cat_home">
-						<i class="icon-info-4"></i>
-						<img src="{{asset('frontend')}}/img/icon_cat_2.svg" width="60" height="60" alt="">
-						<h3>Ear-Nose-Throato(ENT) Specialist</h3>
-						<ul class="clearfix">
-							<li><strong>124</strong>Doctors</li>
-							<li><strong>60</strong>Clinics</li>
-						</ul>
-					</a>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<a href="/list" class="box_cat_home">
-						<i class="icon-info-4"></i>
-						<img src="{{asset('frontend')}}/img/icon_cat_3.svg" width="60" height="60" alt="">
-						<h3>Neurology</h3>
-						<ul class="clearfix">
-							<li><strong>124</strong>Doctors</li>
-							<li><strong>60</strong>Clinics</li>
-						</ul>
-					</a>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<a href="/list" class="box_cat_home">
-						<i class="icon-info-4"></i>
-						<img src="{{asset('frontend')}}/img/icon_cat_4.svg" width="60" height="60" alt="">
-						<h3>Dermatologist</h3>
-						<ul class="clearfix">
-							<li><strong>124</strong>Doctors</li>
-							<li><strong>60</strong>Clinics</li>
-						</ul>
-					</a>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<a href="/list" class="box_cat_home">
-						<i class="icon-info-4"></i>
-						<img src="{{asset('frontend')}}/img/icon_cat_7.svg" width="60" height="60" alt="">
-						<h3>Laboratory</h3>
-						<ul class="clearfix">
-							<li><strong>124</strong>Doctors</li>
-							<li><strong>60</strong>Clinics</li>
-						</ul>
-					</a>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<a href="/list" class="box_cat_home">
-						<i class="icon-info-4"></i>
-						<img src="{{asset('frontend')}}/img/icon_cat_5.svg" width="60" height="60" alt="">
-						<h3>general surgery</h3>
-						<ul class="clearfix">
-							<li><strong>124</strong>Doctors</li>
-							<li><strong>60</strong>Clinics</li>
-						</ul>
-					</a>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<a href="/list" class="box_cat_home">
-						<i class="icon-info-4"></i>
-						<img src="{{asset('frontend')}}/img/icon_cat_6.svg" width="60" height="60" alt="">
-						<h3>X - Ray</h3>
-						<ul class="clearfix">
-							<li><strong>124</strong>Doctors</li>
-							<li><strong>60</strong>Clinics</li>
-						</ul>
-					</a>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<a href="/list" class="box_cat_home">
-						<i class="icon-info-4"></i>
-						<img src="{{asset('frontend')}}/img/icon_cat_8.svg" width="60" height="60" alt="">
-						<h3>Piscologist</h3>
-						<ul class="clearfix">
-							<li><strong>124</strong>Doctors</li>
-							<li><strong>60</strong>Clinics</li>
-						</ul>
-					</a>
-				</div>
+				@endforeach
+				
+				
+				
 			</div>
 			<!-- /row -->
 		</div>

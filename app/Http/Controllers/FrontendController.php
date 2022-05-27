@@ -3,12 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 
 class FrontendController extends Controller
 {
    
     public function index(){
-        $home=view('frontend.pages.home');
+        $all_spl=DB::table('tbl_specialist')->get();
+        $home=view('frontend.pages.home')
+                ->with('all_spl',$all_spl);
         return view('frontend.master')
         ->with('home',$home);
 

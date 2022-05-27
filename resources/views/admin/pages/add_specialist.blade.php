@@ -18,11 +18,15 @@
 					<div class="header_box version_2">
 						<h2><i class="fa fa-location-pin"></i>Add Specialist</h2>
 					</div>
-					<form method="post" action="/save-specialist">
+					<form method="post" action="/save-specialist" enctype="multipart/form-data">
 						@csrf
 					<div class="form-group">
 						<label>Specialist Name</label>
 						<input class="form-control" type="text" name="specialist_name">
+					</div>
+					<div class="form-group">
+						<label>Specialist ICON</label>
+						<input class="form-control" type="file" name="spl_image">
 					</div>
 					
 				</div>

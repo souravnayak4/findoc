@@ -143,14 +143,27 @@ class AdminController extends Controller
     }
     public function save_specialist(Request $request){
 
-        DB::table('tbl_specialist')->insert([
-            'spl_name' => $request->specialist_name
-            
-        ]); 
-        Toastr::success('specialist add Successfully', 'Info', ["positionClass" => "toast-top-center"]);
-        
-        return Redirect::back();   
-       
+        $data=array();
+        $data['spl_name'] = $request->specialist_name;
+
+        $image = $request->file('spl_image');
+
+
+        if ($request->hasFile('spl_image')) {
+
+            $imageName = $image->getClientOriginalName();
+            $image->move(public_path('spl_icon'), $imageName);
+
+            $data['spl_image'] = 'spl_icon/' . $imageName;
+
+            DB::table('tbl_specialist')->insert($data);
+
+            Toastr::success('specialist add Successfully', 'Info', ["positionClass" => "toast-top-center"]);
+            return Redirect::back();
+        }
+        return redirect()->back()->with('error', 'Something went wrong !');
+
+
 
     }
     public function manage_specialist(){
