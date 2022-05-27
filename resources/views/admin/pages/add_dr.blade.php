@@ -30,13 +30,16 @@
 					</div>
 					<div class="form-group">
                     <label>Specialist</label>
-                    <select class="form-control" name="spl_id">
+                    <select class="form-control @error('spl_id') is-invalid @enderror" name="spl_id">
                         <option value="">Select Specialist</option>
                         @foreach($all_spl as $v_spl)
                         <option value="{{$v_spl->spl_id}}">{{$v_spl->spl_name}}</option>
 						
                         @endforeach
                     </select>
+					@error('spl_id')
+    <div class="alert alert-danger">{{ $message }}</div>
+@enderror
                 </div>
 					<div class="form-group">
 						<label>Qualification</label>
