@@ -53,8 +53,8 @@
                 <tr>
                   <td>{{$v_all->dr_id}}</td>
                   <td>{{$v_all->dr_name}}</td>
-                  <td>{{$v_all->spl_id}}</td>
-                  <td>{{$v_all->dr_specialist}}</td>
+                  <td>{{$v_all->dr_qualification}}</td>
+                  <td>{{$v_all->spl_name}}</td>
                   <td><a href="{{URL::to('edit-dr/'.$v_all->dr_id)}}">Edit</a></td>
                   <td><a href="{{URL::to('delete-dr/'.$v_all->dr_id)}}"
                                                     data-toggle="tooltip" data-original-title="Close"

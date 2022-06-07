@@ -17,8 +17,14 @@ class FrontendController extends Controller
 
     }
 
-    public function list(){
-        $list=view('frontend.pages.list');
+    public function list($spl_id){
+        $all=DB::table('tbl_dr_profile')
+        ->join('tbl_specialist', 'tbl_dr_profile.spl_id', '=', 'tbl_specialist.spl_id')
+            ->where('tbl_dr_profile.spl_id',$spl_id)
+            ->select('tbl_dr_profile.*', 'tbl_specialist.spl_name')
+            ->get();
+        $list=view('frontend.pages.list')
+                ->with('all_dr',$all);
         return view('frontend.master')
         ->with('list',$list);
 

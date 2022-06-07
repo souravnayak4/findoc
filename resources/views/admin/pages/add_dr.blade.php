@@ -50,8 +50,8 @@
 					</div>
 					<div class="form-group">
 						<label>Experience</label>
-										<input class="form-control @error('dr_qualification') is-invalid @enderror" type="text" name="dr_qualification" value="{{ old('dr_qualification') }}">
-						@error('dr_qualification')
+										<input class="form-control @error('dr_exp') is-invalid @enderror" type="text" name="dr_exp" value="{{ old('dr_exp') }}">
+						@error('dr_exp')
     <div class="alert alert-danger">{{ $message }}</div>
 @enderror
 					</div>

@@ -273,7 +273,11 @@ class AdminController extends Controller
 
     }
     public function manage_dr(){
-        $all=DB::table('tbl_dr_profile')->get();
+        $all=DB::table('tbl_dr_profile')
+        ->join('tbl_specialist', 'tbl_dr_profile.spl_id', '=', 'tbl_specialist.spl_id')
+            
+            ->select('tbl_dr_profile.*', 'tbl_specialist.spl_name')
+            ->get();
 
         $dr=view('admin.pages.manage_dr')
                 ->with('all',$all);

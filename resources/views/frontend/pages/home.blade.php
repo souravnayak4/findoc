@@ -132,13 +132,17 @@
 			</div>
 			<div class="row">
 				@foreach($all_spl as $v_spl)
+				<?php $users = DB::table('tbl_dr_profile')
+								->where('spl_id',$v_spl->spl_id)
+								->count();
+								?>
 				<div class="col-lg-3 col-md-6">
-					<a href="/list" class="box_cat_home">
+					<a href="/list/{{$v_spl->spl_id}}" class="box_cat_home">
 						<i class="icon-info-4"></i>
 						<img src="{{asset($v_spl->spl_image)}}" width="60" height="60" alt="">
 						<h3>{{$v_spl->spl_name}}</h3>
 						<ul class="clearfix">
-							<li><strong>124</strong>Doctors</li>
+							<li><strong>{{$users}}</strong>Doctors</li>
 							<!-- <li><strong>60</strong>Clinics</li> -->
 						</ul>
 					</a>
