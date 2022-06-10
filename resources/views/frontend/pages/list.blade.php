@@ -65,7 +65,7 @@
 					<div class="strip_list wow fadeIn">
 						<a href="#0" class="wish_bt"></a>
 						<figure>
-							<a href="detail-page.html"><img src="http://via.placeholder.com/565x565.jpg" alt=""></a>
+							<a href="detail-page.html"><img src="{{asset($v_dr->dr_image)}}" alt=""></a>
 						</figure>
 						<small>{{$v_dr->spl_name}}</small>
 						<h3>{{$v_dr->dr_name}}</h3>

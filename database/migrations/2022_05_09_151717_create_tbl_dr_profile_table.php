@@ -19,6 +19,7 @@ class CreateTblDrProfileTable extends Migration
             $table->string('dr_qualification');
             $table->integer('spl_id');
             $table->string('dr_exp');
+            $table->string('dr_image');
             $table->timestamps();
         });
     }

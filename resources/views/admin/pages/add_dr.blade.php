@@ -19,7 +19,7 @@
 						<h2><i class="fa fa-location-pin"></i>Add dr</h2>
 					</div>
 					
-					<form method="post" action="/save-dr">
+					<form method="post" action="/save-dr" enctype="multipart/form-data">
 						@csrf
 					<div class="form-group">
 						<label>Dr Name</label>
@@ -55,7 +55,10 @@
     <div class="alert alert-danger">{{ $message }}</div>
 @enderror
 					</div>
-					
+					<div class="form-group">
+						<label>DR ICON</label>
+						<input class="form-control" type="file" name="dr_image">
+					</div>
 				</div>
 			</div>
 			

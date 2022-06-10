@@ -302,21 +302,39 @@ class AdminController extends Controller
             'spl_id' => 'required',
             'dr_qualification' => 'required',
             'dr_exp' => 'required',
-            
+            'dr_image' => 'required',
         ]);
-
+       
+        $data=array();
         //print($request->area_name);
-        DB::table('tbl_dr_profile')->insert([
-            'dr_name' => $request->dr_name,
-            'spl_id' => $request->spl_id,
-            'dr_qualification' => $request->dr_qualification,
-            'dr_exp' => $request->dr_exp
-            
-        ]);
-
-        Toastr::success('Doctor add Successfully', 'Info', ["positionClass" => "toast-top-center"]);
+       
+            $data['dr_name'] = $request->dr_name;
+            $data['spl_id'] = $request->spl_id;
+            $data['dr_qualification'] = $request->dr_qualification;
+            $data['dr_exp'] = $request->dr_exp;
+            //$data['dr_image'] = $request->dr_image;
         
-        return Redirect::back();
+        $image = $request->file('dr_image');
+        //dd($data);
+
+        if ($request->hasFile('dr_image')) {
+
+            $imageName = $image->getClientOriginalName();
+            $image->move(public_path('dr_image'), $imageName);
+
+            $data['dr_image'] = 'dr_image/' . $imageName;
+
+            //dd($data);
+
+            DB::table('tbl_dr_profile')->insert($data);
+
+            
+      
+         Toastr::success('Doctor add Successfully', 'Info', ["positionClass" => "toast-top-center"]);
+         return Redirect::back();
+        }
+        return redirect()->back()->with('error', 'Something went wrong !');
+        
 
     }
    
