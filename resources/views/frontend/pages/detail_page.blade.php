@@ -18,10 +18,10 @@
             <aside class="col-xl-3 col-lg-4" id="sidebar">
                 <div class="box_profile">
                     <figure>
-                        <img src="http://via.placeholder.com/565x565.jpg" alt="" class="img-fluid">
+                        <img src="{{asset($dr_info->dr_image)}}" alt="" class="img-fluid">
                     </figure>
-                    <small>Primary care - Internist</small>
-                    <h1>DR. Julia Jhones</h1>
+                    <small>{{ $dr_info->spl_name }}</small>
+                    <h1>{{ $dr_info->dr_name }}</h1>
                     <span class="rating">
                         <i class="icon_star voted"></i>
                         <i class="icon_star voted"></i>
@@ -37,14 +37,14 @@
                         <li>854 Views</li>
                         <li>124 Patients</li>
                     </ul>
-                    <ul class="contacts">
+                    {{-- <ul class="contacts">
                         <li>
                             <h6>Address</h6>859 60th, Brooklyn, NY, 11220
                         </li>
                         <li>
                             <h6>Phone</h6><a href="tel://000434323342">+00043 4323342</a>
                         </li>
-                    </ul>
+                    </ul> --}}
                     <!-- <div class="text-center"><a href="https://www.google.com/maps/dir//Assistance+%E2%80%93+H%C3%B4pitaux+De+Paris,+3+Avenue+Victoria,+75004+Paris,+Francia/@48.8606548,2.3348734,14z/data=!4m15!1m6!3m5!1s0x0:0xa6a9af76b1e2d899!2sAssistance+%E2%80%93+H%C3%B4pitaux+De+Paris!8m2!3d48.8568376!4d2.3504305!4m7!1m0!1m5!1m1!1s0x47e67031f8c20147:0xa6a9af76b1e2d899!2m2!1d2.3504327!2d48.8568361" class="btn_1 outline" target="_blank"><i class="icon_pin"></i> View on map</a></div>
 					</div> -->
             </aside>
