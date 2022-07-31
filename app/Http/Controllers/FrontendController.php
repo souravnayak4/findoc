@@ -32,17 +32,34 @@ class FrontendController extends Controller
     public function detail_page($id){
         $all=DB::table('tbl_dr_profile')
         ->join('tbl_specialist', 'tbl_dr_profile.spl_id', '=', 'tbl_specialist.spl_id')
+       
         ->where('tbl_dr_profile.dr_id',$id)
             ->select('tbl_dr_profile.*', 'tbl_specialist.spl_name')
             ->first();
+
+        $all_date=DB::table('tbl_dr_profile')
+            ->join('tbl_dr_date', 'tbl_dr_profile.dr_id', '=', 'tbl_dr_date.dr_id')
+            ->where('tbl_dr_profile.dr_id',$id)
+            ->select('tbl_dr_date.*')
+                ->get();
         $detail_page=view('frontend.pages.detail_page')
-                    ->with('dr_info',$all);
+                    ->with('dr_info',$all)
+                    ->with('all_date',$all_date);
         return view('frontend.master')
         ->with('detail_page',$detail_page);
 
     }
-    public function booking(){
-        $booking=view('frontend.pages.booking');
+    public function booking($dr_id,$date_id){
+
+        $find_dr=DB::table('tbl_dr_profile')
+        ->join('tbl_dr_date', 'tbl_dr_profile.dr_id', '=', 'tbl_dr_date.dr_id')
+        ->where('tbl_dr_profile.dr_id',$dr_id)
+        ->where('tbl_dr_date.id',$date_id)
+        ->select('tbl_dr_date.*','tbl_dr_profile.*')
+        ->first();
+
+        $booking=view('frontend.pages.booking')
+                ->with('find_dr',$find_dr);
         return view('frontend.master')
         ->with('booking',$booking);
 

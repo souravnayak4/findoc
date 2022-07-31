@@ -339,4 +339,29 @@ class AdminController extends Controller
     }
    
 
+      //           Dr Date and time 
+
+      public function add_date_dr($id){
+        $area=view('admin.pages.add_date_dr')
+                ->with('find_dr',$id);
+        return view('admin.master')
+        ->with('area',$area);
+
+    }
+    public function save_date_dr(Request $request){
+
+        //print($request->area_name);
+        DB::table('tbl_dr_date')->insert([
+            'dr_id' => $request->dr_id,
+            'dr_date' => $request->dr_date,
+            'dr_time' => $request->dr_time
+            
+        ]);
+
+        Toastr::success('Date add Successfully', 'Info', ["positionClass" => "toast-top-center"]);
+        
+        return Redirect::back();
+
+    }
+
 }

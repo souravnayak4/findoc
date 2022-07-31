@@ -217,20 +217,24 @@
 							</div>
 							<div class="summary">
 								<ul>
-									<li>Date: <strong class="float-right">11/12/2017</strong></li>
-									<li>Time: <strong class="float-right">10.30 am</strong></li>
-									<li>Dr. Name: <strong class="float-right">Dr. julia Jhones</strong></li>
+									<li>Date: <strong class="float-right">{{ $find_dr->dr_date }}</strong></li>
+									<li>Time: <strong class="float-right">{{ $find_dr->dr_time }}</strong></li>
+									<li>Dr. Name: <strong class="float-right">{{ $find_dr->dr_name }}</strong></li>
 								</ul>
 							</div>
+							<?php $sc=($find_dr->dr_fees)* 0.1 ;
+									$total=$find_dr->dr_fees + $sc;
+							?>
 							<ul class="treatments checkout clearfix">
 								<li>
-									Back Pain visit <strong class="float-right">$55</strong>
+									Dr. Fees <strong class="float-right">{{ $find_dr->dr_fees }}</strong>
 								</li>
 								<li>
-									Cardiovascular screen <strong class="float-right">$55</strong>
+									Service Fees <strong class="float-right">{{ $sc }}</strong>
 								</li>
+								
 								<li class="total">
-									Total <strong class="float-right">$110</strong>
+									Total <strong class="float-right">{{ $total }}</strong>
 								</li>
 							</ul>
 							<hr>

@@ -23,7 +23,7 @@ use App\Http\Controllers\AdminController;
 Route::get('/', [FrontendController::class, 'index']);
 Route::get('/list/{spl_id}', [FrontendController::class, 'list']);
 Route::get('/detail-page/{id}', [FrontendController::class, 'detail_page']);
-Route::get('/booking', [FrontendController::class, 'booking']);
+Route::get('/booking/{dr_id}/{date_id}', [FrontendController::class, 'booking']);
 Route::get('/confirm', [FrontendController::class, 'confirm']);
 
 Route::get('/dashboard', [AdminController::class, 'dashboard']);
@@ -64,3 +64,5 @@ Route::get('/manage-dr', [AdminController::class, 'manage_dr']);
 
 Route::get('/add-dr', [AdminController::class, 'add_dr']);
 Route::post('/save-dr', [AdminController::class, 'save_dr']);
+Route::get('/add-date-dr/{id}', [AdminController::class, 'add_date_dr']);
+Route::post('/save-date-dr', [AdminController::class, 'save_date_dr']);

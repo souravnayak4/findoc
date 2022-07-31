@@ -35,6 +35,7 @@
                   <th> qualification</th>
                   <th>specialist</th>
                   <th>Edit</th>
+                  <th>Add Date</th>
                   <th>Delete</th>
                   
                 </tr>
@@ -56,6 +57,7 @@
                   <td>{{$v_all->dr_qualification}}</td>
                   <td>{{$v_all->spl_name}}</td>
                   <td><a href="{{URL::to('edit-dr/'.$v_all->dr_id)}}">Edit</a></td>
+                  <td><a href="{{URL::to('add-date-dr/'.$v_all->dr_id)}}">Add Date</a></td>
                   <td><a href="{{URL::to('delete-dr/'.$v_all->dr_id)}}"
                                                     data-toggle="tooltip" data-original-title="Close"
                                                     onclick="return check_delete();">Delete</td>

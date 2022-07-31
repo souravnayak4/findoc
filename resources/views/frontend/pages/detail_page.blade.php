@@ -58,7 +58,7 @@
                     </div>
 
                     <div class="row add_bottom_45">
-                        <div class="col-lg-7">
+                        {{-- <div class="col-lg-7">
                             <div class="form-group">
                                 <div id="calendar"></div>
                                 <input type="hidden" id="my_hidden_input">
@@ -119,69 +119,41 @@
                                     <label for="radio12">04.00pm</label>
                                 </li>
                             </ul>
-                        </div>
+                        </div> --}}
+                        <table class="table table-dark">
+                            <thead>
+                              <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Day</th>
+                                <th scope="col">Time</th>
+                                <th scope="col">Book Now</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                <?php $i=1; ?>
+                                @foreach ($all_date as $v_date )
+                                    
+                                
+                              <tr>
+                                <th scope="row">{{ $i++ }}</th>
+                                <td>{{ $v_date->dr_date }}</td>
+                                <td>{{ $v_date->dr_time }}</td>
+                                <td><a href="/booking/{{ $v_date->dr_id }}/{{ $v_date->id }}" class="btn_1 medium">Book Now</a></td>
+                              </tr>
+                              @endforeach
+                            </tbody>
+                          </table>
                     </div>
                     <!-- /row -->
 
-                    <!-- <div class="main_title_4">
-							<h3><i class="icon_circle-slelected"></i>Select visit - treatment</h3>
-						</div> -->
-                    <ul class="treatments clearfix">
-                        <li>
-                            <!-- <div class="checkbox">
-									<input type="checkbox" class="css-checkbox" id="visit1" name="visit1">
-									<label for="visit1" class="css-label">Back Pain visit <strong>$55</strong></label>
-								</div> -->
-                        </li>
-                        <li>
-                            <!-- <div class="checkbox">
-									<input type="checkbox" class="css-checkbox" id="visit2" name="visit2">
-									<label for="visit2" class="css-label">Cardiovascular screen <strong>$55</strong></label>
-								</div> -->
-                        </li>
-                        <li>
-                            <!-- <div class="checkbox">
-									<input type="checkbox" class="css-checkbox" id="visit3" name="visit3">
-									<label for="visit3" class="css-label">Diabetes consultation <strong>$55</strong></label>
-								</div> -->
-                        </li>
-                        <li>
-                            <!-- <div class="checkbox">
-									<input type="checkbox" class="css-checkbox" id="visit4" name="visit4">
-									<label for="visit4" class="css-label">Icontinence visit <strong>$55</strong></label>
-								</div> -->
-                        </li>
-                        <li>
-                            <!-- <div class="checkbox">
-									<input type="checkbox" class="css-checkbox" id="visit5" name="visit5">
-									<label for="visit5" class="css-label">Foot Pain visit <strong>$55</strong></label>
-								</div> -->
-                        </li>
-                        <li>
-                            <!-- <div class="checkbox">
-									<input type="checkbox" class="css-checkbox" id="visit6" name="visit6">
-									<label for="visit6" class="css-label">Food intollerance visit <strong>$55</strong></label>
-								</div> -->
-                        </li>
-                        <li>
-                            <!-- <div class="checkbox">
-									<input type="checkbox" class="css-checkbox" id="visit7" name="visit7">
-									<label for="visit7" class="css-label">Neck Pain visit <strong>$55</strong></label>
-								</div> -->
-                        </li>
-                        <li>
-                            <!-- <div class="checkbox">
-									<input type="checkbox" class="css-checkbox" id="visit8" name="visit8">
-									<label for="visit8" class="css-label">Back Pain visit <strong>$55</strong></label>
-								</div -->>
-                        </li>
-                    </ul>
+                  
+                   
                     <hr>
-                    <div class="text-center"><a href="/booking" class="btn_1 medium">Book Now</a></div>
+                    {{-- <div class="text-center"><a href="/booking" class="btn_1 medium">Book Now</a></div> --}}
                 </div>
                 <!-- /box_general -->
 
-                <div class="tabs_styled_2">
+               {{--  <div class="tabs_styled_2">
                     <ul class="nav nav-tabs" role="tablist">
                         <!-- <li class="nav-item">
 								<a class="nav-link active" id="general-tab" data-toggle="tab" href="#general" role="tab" aria-controls="general" aria-expanded="true">General info</a>
@@ -447,7 +419,7 @@
                         <!-- /tab_3 -->
                     </div>
                     <!-- /tab-content -->
-                </div>
+                </div> --}}
                 <!-- /tabs_styled -->
             </div>
             <!-- /col -->
