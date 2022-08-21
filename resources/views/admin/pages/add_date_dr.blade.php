@@ -21,6 +21,15 @@
                     <form method="post" action="/save-date-dr">
 						@csrf
                         <div class="form-group">
+                            <label>Clinic</label>
+                            <select class="form-control" name="clinic_id">
+                                <option value="">Select clinic</option>
+                                @foreach($all_clinic as $v_clinic)
+                                <option value="{{$v_clinic->clinic_id}}">{{$v_clinic->clinic_name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group">
                             <label>Date</label>
                             <input class="form-control" type="text" name="dr_date">
                             <input class="form-control" type="hidden" name="dr_id" value={{ $find_dr }}>

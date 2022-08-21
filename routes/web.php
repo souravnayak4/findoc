@@ -24,7 +24,7 @@ Route::get('/', [FrontendController::class, 'index']);
 Route::get('/list/{spl_id}', [FrontendController::class, 'list']);
 Route::get('/detail-page/{id}', [FrontendController::class, 'detail_page']);
 Route::get('/booking/{dr_id}/{date_id}', [FrontendController::class, 'booking']);
-Route::get('/confirm', [FrontendController::class, 'confirm']);
+Route::post('/confirm', [FrontendController::class, 'confirm']);
 
 Route::get('/dashboard', [AdminController::class, 'dashboard']);
 Route::get('/messages', [AdminController::class, 'messages']);

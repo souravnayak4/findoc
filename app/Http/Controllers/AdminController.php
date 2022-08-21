@@ -342,7 +342,9 @@ class AdminController extends Controller
       //           Dr Date and time 
 
       public function add_date_dr($id){
+        $all_clinic=DB::table('tbl_clinic')->get();
         $area=view('admin.pages.add_date_dr')
+            ->with('all_clinic',$all_clinic)
                 ->with('find_dr',$id);
         return view('admin.master')
         ->with('area',$area);
@@ -353,6 +355,7 @@ class AdminController extends Controller
         //print($request->area_name);
         DB::table('tbl_dr_date')->insert([
             'dr_id' => $request->dr_id,
+            'clinic_id' => $request->clinic_id,
             'dr_date' => $request->dr_date,
             'dr_time' => $request->dr_time
             

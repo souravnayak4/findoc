@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
-
+use Toastr;
 class FrontendController extends Controller
 {
    
@@ -64,8 +64,31 @@ class FrontendController extends Controller
         ->with('booking',$booking);
 
     }
-    public function confirm(){
-        $confirm=view('frontend.pages.confirm');
+    public function confirm(Request $request){
+
+        $id=DB::table('customer_info')->insertGetId([
+            'name' => $request->cust_name,
+            'order_id' => $request->order_id,
+            'clinic_id' => $request->clinic_id,
+            'dr_id' => $request->dr_id,
+            'dr_date' => $request->dr_date,
+            'age' => $request->age,
+            'gender' => $request->gender,
+            'address' => $request->address,
+            'phone' => $request->phone,
+            'payment_method' => $request->payment_method,
+            'total' => $request->total
+
+            
+        ]);
+
+        Toastr::success(' Booking Successfully', 'Info', ["positionClass" => "toast-top-center"]);
+        
+        //return Redirect::back();
+
+        $find_order=DB::table('customer_info')->where('id',$id)->first();
+        
+        $confirm=view('frontend.pages.confirm')->with('find_order',$find_order);
         return view('frontend.master')
         ->with('confirm',$confirm);
 

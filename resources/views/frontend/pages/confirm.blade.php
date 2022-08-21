@@ -26,7 +26,7 @@
 							</svg>
 						</div>
 					<h2>Thanks for your booking!</h2>
-					<p>You'll receive a confirmation email at mail@example.com</p>
+					<p>Your Booking no :{{ $find_order->order_id }}</p>
 					</div>
 				</div>
 			</div>

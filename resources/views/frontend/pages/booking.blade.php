@@ -1,3 +1,8 @@
+
+<?php $sc=($find_dr->dr_fees)* 0.1 ;
+$total=$find_dr->dr_fees + $sc;
+?>
+
 @extends('frontend.master')
 @section('title', 'booking')
 @section('content')
@@ -26,40 +31,49 @@
 							Mussum ipsum cacilds, vidis litro abertis.
 						</p>
 					</div>
+					<form method="post" action="/confirm">
+						@csrf
 					<div class="step">
 						<div class="row">
 							<div class="col-md-6 col-sm-6">
 								<div class="form-group">
-									<label>First name</label>
-									<input type="text" class="form-control" id="firstname_booking" name="firstname_booking" placeholder="Jhon">
+									<label>Name</label>
+									<input type="text" class="form-control" id="firstname_booking" name="cust_name" placeholder="Jhon">
 								</div>
 							</div>
 							<div class="col-md-6 col-sm-6">
 								<div class="form-group">
-									<label>Last name</label>
-									<input type="text" class="form-control" id="lastname_booking" name="lastname_booking" placeholder="Doe">
+									<label>Age</label>
+									<input type="number" class="form-control" id="lastname_booking" name="age" >
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6 col-sm-6">
+								
+									<label>Gender</label>
+								<div class="form-group">
+									<select class="form-control" name="gender" id="gender">
+										<option value="">Select your Gender</option>
+										<option value="Male">Male</option>
+										<option value="Female">Female</option>
+										<option value="Others">Others</option>
+									</select>
+								</div>
+								
+							</div>
+							<div class="col-md-6 col-sm-6">
+								<div class="form-group">
+									<label>Address</label>
+									<input type="text" id="address" name="address" class="form-control" placeholder="Address">
 								</div>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-6 col-sm-6">
 								<div class="form-group">
-									<label>Email</label>
-									<input type="email" id="email_booking" name="email_booking" class="form-control" placeholder="jhon@doe.com">
-								</div>
-							</div>
-							<div class="col-md-6 col-sm-6">
-								<div class="form-group">
-									<label>Confirm email</label>
-									<input type="email" id="email_booking_2" name="email_booking_2" class="form-control" placeholder="jhon@doe.com">
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-6 col-sm-6">
-								<div class="form-group">
-									<label>Telephone</label>
-									<input type="text" id="telephone_booking" name="telephone_booking" class="form-control" placeholder="00 44 678 94329">
+									<label>Phone</label>
+									<input type="text" id="phone" name="phone" class="form-control" placeholder="00 44 678 94329">
 								</div>
 							</div>
 						</div>
@@ -68,134 +82,27 @@
 					<!--End step -->
 
 					 <div class="form_title">
-						<h3><strong>2</strong>Payment Information</h3>
+						<h3><strong>2</strong>Select Payment Method</h3>
 						<p>
 							Mussum ipsum cacilds, vidis litro abertis.
 						</p>
 					</div> 
 					 <div class="step">
 						 <div class="form-group">
-							<label>Name on card</label>
-							<input type="text" class="form-control" id="name_card_booking" name="name_card_booking" placeholder="Jhon Doe">
+							<label>Offline</label>
+							<input type="radio" class="form-control" id="payment_method" name="payment_method" value="0" >
 						</div>
-						 <div class="row">
-							<div class="col-md-6">
-								<div class="form-group">
-									<label>Card number</label>
-									<input type="text" id="card_number" name="card_number" class="form-control" placeholder="xxxx - xxxx - xxxx - xxxx">
-								</div>
-							</div> 
-							<div class="col-md-6 col-sm-6">
-								<img src="img/payments.png" alt="Cards" class="cards">
-							</div> 
-						</div> 
-						<div class="row">
-							<div class="col-md-6">
-								<label>Expiration date</label>
-								<div class="row">
-									<div class="col-md-6">
-										<div class="form-group">
-											<input type="text" id="expire_month" name="expire_month" class="form-control" placeholder="MM">
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="form-group">
-											<input type="text" id="expire_year" name="expire_year" class="form-control" placeholder="Year">
-										</div>
-									</div>
-								</div>
-							</div> 
-							<div class="col-md-6">
-								<div class="form-group">
-									<label>Security code</label>
-									<div class="row">
-										<div class="col-md-4">
-											<div class="form-group">
-												<input type="text" id="ccv" name="ccv" class="form-control" placeholder="CCV">
-											</div>
-										</div>
-										<div class="col-md-8">
-											<img src="img/icon_ccv.gif" width="50" height="29" alt="ccv"><small>Last 3 digits</small>
-										</div>
-									</div>
-								</div>
-							</div> 
+						<div class="form-group">
+							<label>Online</label>
+							<input type="radio" id="payment_method" name="payment_method" class="form-control" value="1">
 						</div>
-						<!--End row -->
-
-						<h5>Or checkout with Paypal</h5>
-						<p>
-							Lorem ipsum dolor sit amet, vim id accusata sensibus, id ridens quaeque qui. Ne qui vocent ornatus molestie, reque fierent dissentiunt mel ea.
-						</p> 
-						<p>
-							<img src="img/paypal_bt.png" alt="Image">
-						</p> 
+						 
+						
 					</div>
 					<hr>
 					<!--End step -->
 
-					<div class="form_title">
-						<h3><strong>3</strong>Billing Address</h3>
-						<p>
-							Mussum ipsum cacilds, vidis litro abertis.
-						</p>
-					</div>
-					<div class="step">
-						<div class="row">
-							<div class="col-md-6 col-sm-6">
-								<label>Country</label>
-								<div class="form-group">
-									<select class="form-control" name="country" id="country">
-										<option value="">Select your country</option>
-										<option value="india">india</option>
-										<option value="United states">United states</option>
-										<option value="Asia">Asia</option>
-									</select>
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-6 col-sm-6">
-								 <div class="form-group">
-									<label>Street line 1</label>
-									<input type="text" id="street_1" name="street_1" class="form-control" placeholder="Street line 1">
-								</div> 
-							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-									<label>State</label>
-									<input type="text" id="state_booking" name="state_booking" class="form-control" placeholder="Florida">
-								</div>
-							</div>
-							<div class="col-md-6 col-sm-6">
-								<div class="form-group">
-									<label>Street line 2</label>
-									<input type="text" id="street_2" name="street_2" class="form-control" placeholder="Street line 1">
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-6">
-								<div class="form-group">
-									<label>City</label>
-									<input type="text" id="city_booking" name="city_booking" class="form-control" placeholder="Miami">
-								</div>
-							</div>
-							<div class="col-md-3">
-								<div class="form-group">
-									<label>State</label>
-									<input type="text" id="state_booking" name="state_booking" class="form-control" placeholder="Florida">
-								</div>
-							</div>
-							<div class="col-md-3">
-								<div class="form-group">
-									<label>Postal code</label>
-									<input type="text" id="postal_code" name="postal_code" class="form-control" placeholder="00342">
-								</div>
-							</div>
-						</div>
-						<!--End row -->
-					</div>
+					
 					<hr>
 					<!--End step -->
 					<div id="policy">
@@ -206,12 +113,21 @@
 							</label>
 						</div>
 					</div>
+					<input type="hidden" value="{{ $total }}" name="total">
+					<input type="hidden" value="{{ random_int(100000, 999999); }}" name="order_id">
+					<input type="hidden" value="{{ $find_dr->dr_id }}" name="dr_id">
+					<input type="hidden" value="{{ $find_dr->dr_date }}" name="dr_date">
+					<input type="hidden" value="{{ $find_dr->clinic_id }}" name="clinic_id">
+							<input type="submit" class="btn_1 full-width" value="Confirm and pay">
+							
+						</form>
 				</div>
 				</div>
 				<!-- /col -->
-				<aside class="col-xl-4 col-lg-4" id="sidebar">
-					<div class="box_general_3 booking">
-						<form>
+				
+							<aside class="col-xl-4 col-lg-4" id="sidebar">
+							<div class="box_general_3 booking">
+						
 							<div class="title">
 								<h3>Your booking</h3>
 							</div>
@@ -222,9 +138,7 @@
 									<li>Dr. Name: <strong class="float-right">{{ $find_dr->dr_name }}</strong></li>
 								</ul>
 							</div>
-							<?php $sc=($find_dr->dr_fees)* 0.1 ;
-									$total=$find_dr->dr_fees + $sc;
-							?>
+							
 							<ul class="treatments checkout clearfix">
 								<li>
 									Dr. Fees <strong class="float-right">{{ $find_dr->dr_fees }}</strong>
@@ -238,8 +152,7 @@
 								</li>
 							</ul>
 							<hr>
-							<a href="/confirm" class="btn_1 full-width">Confirm and pay</a>
-						</form>
+							
 					</div>
 					<!-- /box_general -->
 				</aside>
